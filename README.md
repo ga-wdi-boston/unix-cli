@@ -130,7 +130,7 @@ $ ls
 $ touch README
 ```
 
-> This will **create an empty file, using touch, ** that will be named README if one doesn't already  exist.
+> This will **create an empty file, using touch,** that will be named README if one doesn't already  exist.
 
 > Let's look at all the files our project, only the empty README right now.
 
