@@ -96,7 +96,7 @@ Is the top level directory in the tree structure that makes up your project or t
 
 > Open up the Finder and go to the root directory of your filesystem.
 
-> Find you're home directory in the filesystem. Hint: use the absolute
+> Find your home directory in the filesystem. Hint: use the absolute
   file path returned from the pwd above to find this.
 
 ### Create a project.
