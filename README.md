@@ -58,7 +58,7 @@ Hardware.*
 
 This will bring up the command line interface (CLI) we can work in. We'll be typing Unix commands and viewing our project.
 
-> We can click in the hour glass in the upper-right side of window, in the menu up there. Then type terminal and hit return.
+> We can click in the magnifying glass in the upper-right side of window, in the menu up there. Then type terminal and hit return.
 
 > Alternatively, you can type 'Cmd-Space' to bring up Spotlight search. Then type terminal and hit return.
 
