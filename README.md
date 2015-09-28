@@ -159,7 +159,7 @@ $ subl .
 
 > This will open the Sublime Text Editor for the  project in this current directory. 
 
-##### Definition: The The dot, '.' and dotdot, '..' directory.
+##### Definition: The dot, '.' and dotdot, '..' directory.
 Notice that when we view the contents of this directory with **ls -al** we view all the files, including hidden files.
 The dot directory is just another way to refer to the current directory and the dotdot directory is another way to refer to the current directory's parent directory.
 
