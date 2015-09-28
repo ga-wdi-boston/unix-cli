@@ -75,7 +75,7 @@ $ pwd
 /Users/tdyer
 ```
 
-> This will show you what the **present working directory, pwd** is. You might of heard directories called folders. Directories are what one uses to organize files in the **computer's file system**.
+> This will show you what the **present working directory, pwd** is. You might have heard directories called folders. Directories are what one uses to organize files in the **computer's file system**.
 
 > Oh, look the "present working directory" is my home, or default, directory. And we're seeing the "absolute path" of my home directory.
 
