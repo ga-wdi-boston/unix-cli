@@ -36,7 +36,7 @@ Ok Mort. What you're getting for nothing is a project that contains a set of fil
 business. No web applications, I charge a lot of money to people I sometimes like for that service. And you aren't paying me and, ahh, do remember that time I went flying across the school yard?
 
 First Morty, **no, no stop talking Morty**, wait, wait the clock is ticking here. I'm going to ask you a set of targeted questions about your **business domain**, the hardware stores, and you're going to answer
-in the breif way.
+in the brief way.
 
 What am I doing this for?
 
