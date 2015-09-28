@@ -46,12 +46,12 @@ Now let's get onto the job of helping Morty out.
 
 > First Morty, lets have a very limited conversation about your business. I'm going to ask you questions and your going to, hopefully, provide me with small focused and succint answers. OK?
 
-> Marty what are the departments in your store?
+> Morty what are the departments in your store?
 
 >>"Lawn and Garden", Plumbing, Electrical, Tools and
 Hardware.*
 
-> Ok, lets first create a project that you Marty are going to work in and own. I'm out of here in about 25 minutes.
+> Ok, lets first create a project that you Morty are going to work in and own. I'm out of here in about 25 minutes.
 
 
 ### Open up the terminal.
