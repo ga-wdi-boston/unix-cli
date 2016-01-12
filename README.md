@@ -7,6 +7,7 @@
 * Create files to contain project information.
 * Edit and delete files.
 * Navigate within a project.
+* View files within a directory.
 
 ## Overview
 
