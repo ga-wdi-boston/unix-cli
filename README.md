@@ -2,11 +2,10 @@
 
 ## Objectives
 
-* Create a project.
-* Create directories to organize a project.
+* Create a directory (folder) in which to store a project.
+* Create subdirectories to organize a project.
 * Create files to contain project information.
-* Edit and Remove files.
-* Explore and Navigate through the Unix File System structure.
+* Edit and delete files.
 
 ## Overview
 
