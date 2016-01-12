@@ -6,6 +6,7 @@
 * Create subdirectories to organize a project.
 * Create files to contain project information.
 * Edit and delete files.
+* Navigate within a project.
 
 ## Overview
 
