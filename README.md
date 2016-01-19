@@ -4,433 +4,216 @@
 
 ## Objectives
 
-* Create a directory (folder) in which to store a project.
-* Create subdirectories to organize a project.
-* Create files to contain project information.
-* Edit and delete files.
-* Navigate within a project.
-* View files within a directory.
+-   View files within a directory.
+-   Create a directory (folder) in which to store a project.
+-   Create subdirectories to organize a project.
+-   Create files to contain project information.
+-   Edit and delete files.
+-   Navigate within a project.
+-   Get help from user manuals.
 
-## Overview
+## Exploring the File System
 
-First a little story. We'll get around to the technical parts in a bit. But, I've found that all projects start with a story. In fact, they can actually turn into a story of epic proportions over time. We won't make this an epic, we only have twelve weeks here.
+You're probably used to creating files and folders using your operating system's
+"explorer" program. The common explorer programs found on each OS are:
 
-A couple of years ago I bumped into an old schoolmate of mine, Morty. Now Morty was kind of a hardware geek. I mean stuff in hardware stores like nails, saws, electrical fixtures, ya know.
+-   Mac: Finder
+-   Windows: Explorer
+-   Ubuntu: Nautilus
 
-Morty realized an ambition awhile ago, now that he a was a fully grown geek and had saved up a bunch of money from working in the nail factory. Morty went into the hardware store business. And Morty knew I had had been working with *"the computers"* and thought I might know something about *"the apps"* and *"the internets"*. 
+On unix-like systems (sometimes refered to as *nix or POSIX), all your files are
+stored in your home folder. On Windows, your files are usually stored in "My
+Documents".
 
-See, Morty kinda lived in 1945 and only begrudgingly picked up these highly technical terms like *"the computers"* and "*the internets"*.
+You might see `~` or `$HOME` used to refer to your home folder on unix-like
+systems.
 
-Even though he wasn't happy about it, he read in a highly popular industry journal that hardware store proprietors where now expected to use *"the internets"* and *"the computers"* to maximize profits.
+### Code Along: Explore the Home Directory
 
-So, upon seeing me he dove right into a campaign to play upon the very sliver of a relationship we had decades ago. He was trying to get me to do some free work for him.
+Open your file explorer application. By default, new windows open in your home
+directory. Note the files you see there.
 
-I told him I could help him out, but he wasn't gonna get much for the price. Of course, he didn't hear that part and just launched into a tirade about how he has structured his store, priced his items organized
-all the bits and hardware bobs.
+Now, open your terminal emulator. By default, new sessions start in your home
+directory as well. How can we tell? Let's inspect the files in our current
+directory with the `ls` command (mnemonic: "list"). You should see the same
+files and directories in your explorer and your terminal.
 
-Now I'm kind of like, whoa slow done Morty let me get the laptop out and we'll sit over on this bench over here. Hey, Morty you got about thirty minutes of a highly paid software developer's time for nothing
-so let's go through this in a highly ordered and structured way, *you pain in the butt you*.
+## Directories and Paths
 
-BTW, I never really liked Morty after that time he shook my hand with a fully charged capacitor that sent me flying across the school yard. 
+Directories (and subdirectories) are usually represented as "folders" in your
+explorer application. They're just convenient ways of grouping files together.
+Paths are string (textual) representations of your current place in the file
+hiearchy (or "tree").
 
-*I really should screw this little project up royally, huh? Payback.*
+Examine this path: `/Users/jeffh`. The leading slash (`/`) is the root of the
+file system. The next part `Users` indicates that there is a directory, or
+folder, with the name "Users" inside the root of the file system. Within the
+"Users" directory is another directory named `jeffh`. The string `/Users/jeffh`
+is an absolute path to the home directory for the current user on my machine.
 
-Ok Mort. What you're getting for nothing is a project that contains a set of files that are important to your business. We'll organize them in a way that, hopefully, will make sense for your business. You'll be able to easily locate, organize, capture and generally manage the information that relates to your
-business. No web applications, I charge a lot of money to people I sometimes like for that service. And you aren't paying me and, ahh, do remember that time I went flying across the school yard?
+### Absolute Paths
 
-First Morty, **no, no stop talking Morty**, wait, wait the clock is ticking here. I'm going to ask you a set of targeted questions about your **business domain**, the hardware stores, and you're going to answer
-in the brief way.
+An absolute path shows the unique location of the files and directories within
+the system's file system. No other files can have this path.
 
-What am I doing this for?
+Note: It sometimes helps to think of the path as the actual full name of the
+file. This is especially true when we are moving or renaming files from the
+command line.
 
-## We Do 
+Absolute paths:
 
-Now let's get onto the job of helping Morty out.
+-   Always start with a leading slash, '/'
+-   Are relative to the root directory of the file system.
 
-> First Morty, lets have a very limited conversation about your business. I'm going to ask you questions and your going to, hopefully, provide me with small focused and succint answers. OK?
+The root directory the top level directory in the tree structure that makes up
+your project or file system. When we talk about absolute paths, the paths are
+relative to the topmost path of the file system.
 
-> Morty what are the departments in your store?
+### Code Along: Explore the Root Path
 
->>"Lawn and Garden", Plumbing, Electrical, Tools and
-Hardware.*
+In your terminal sessions, figure out what directory you are in by using the
+`pwd` command (mnemonic: "print working directory"). What is the topmost
+directory in this path? What is the root of the file system?
 
-> Ok, lets first create a project that you Morty are going to work in and own. I'm out of here in about 25 minutes.
+Open up the Finder and go to the root directory of your filesystem. There are
+several ways to accomplish this, but I prefer the `⌘ + G` shortcut in Finder.
+Examine the contents of the root directory.
 
+Now, back in your terminal, change your current working directory to the root
+of the file system using the `cd` command (mnemonic: "change directory"). What
+happens if we type `cd` and then press the "Return" or "Enter" key? Let's wait
+before we answer that question.
 
-### Open up the terminal.
+In order to change to the root directory, we type `cd /`. In this case, we're
+giving the `cd` command an absolute path. How do we know it's an absolute path?
+Confirm you're in the root directory by using the `pwd` command.
 
-This will bring up the command line interface (CLI) we can work in. We'll be typing Unix commands and viewing our project.
+In order to get back to your home directory, you can type `cd ~`, or `cd $HOME`,
+or even just `cd`. Try it!
 
-> We can click in the magnifying glass in the upper-right side of window, in the menu up there. Then type terminal and hit return.
+### Relative Paths
 
-> Alternatively, you can type 'Cmd-Space' to bring up Spotlight search. Then type terminal and hit return.
+Relative paths are paths described with respect to the current working
+directory. What command do we use to figure out our current working directory?
 
->> Hey, I did it, woohoo!
+So if I'm in my home directory and I see a folder `projects` (how would I see
+that?), I can guess the full path to `projects` is `/Users/jeffh/projects`.
+However, since I'm already in the home folder, the `ls` command tells me only
+unique part of the name needed to distinguish it from sibling directories.
+Sibling directories are directories that exist "beside" other directories,
+instead of within them ("child directories") or above them ("parent
+directories").
 
-> Good. Now Morty this is where real developers do a lot, I mean a lot of their work. And you might like this because it's a little closer to the time warp your living in. It's been around since probably the sixties, I've been using it since 1976 myself.
+This "partial path" is a relative path. It's pretty useful, since I can use it
+to change into the directory by using `cd projects`. So, in addition to taking
+absolute paths, `cd` can take relative paths to navigate the file system. Neat!
 
-> Let's try to get an idea what directory the terminal has put us in by default.
+There are two special relative directories.
 
-*(Note: the command to type will be preceded by the '$' character.)*
+-   `..` represents the parent directory.
+-   `.` represents the current directory.
 
-```bash
-$ pwd
-/Users/tdyer
+So, in order to navigate to a grandparent (parent of a parent) directory from
+the current directory, what command would we use?
+
+### Lab: Make a Subdirectory
+
+Now that we're back in the home directory, let's create a place to store all the
+work we're going to do in this WDI. Naming can often be difficult, but simple
+names are best. Let's create a subdirectory named "wdi". Always use lowercase
+names for your directories and files.
+
+Before issuing the command in the terminal, bring your explorer window into
+focus, the one with the home directory open. Resize and position it so that it
+is visible along with the terminal. Now, in the terminal, execute `mkdir wdi`
+to create the directory (mnemonic: "make directory").
+
+Now, what folder are you in? Did it change by making the new directory?
+
+Create the following directories as well. They should be subdirectories of
+`wdi`.
+
+-   `training`
+-   `diagnostics`
+-   `projects`
+-   `tmp`
+
+Verify that your directory structure resembles the following:
+
+```sh
+$HOME/wdi
+├── diagnostics
+├── projects
+├── tmp
+└── training
 ```
 
-> This will show you what the **present working directory, pwd** is. You might have heard directories called folders. Directories are what one uses to organize files in the **computer's file system**.
+## Files
 
-> Oh, look the "present working directory" is my home, or default, directory. And we're seeing the "absolute path" of my home directory.
+Let's use the `tmp` directory to play around. `tmp` directories are
+conventionally used to store files that can be safely deleted. You should never
+put anything in them that you want to keep.
 
-```
-/Users/tdyer
-```
+### Code Along: Create a File
 
-##### Definition: Absolute path
-An absolute path shows the location of the files and directories within the system's file system. 
+Move into the `tmp` directory inside `wdi`. Create a new file using the `touch`
+command. Let's make a blank text file: `touch name.txt`.
 
-Absolute paths:  
+Next open that file in atom: `atom name.txt`. Write your name inside this file
+and save it. On a Mac, the shortcut to save a file is `⌘ + s`. You can also
+search for the save command (indeed, any command) using the command palette.
+Try it by bringing up the palette with `⌘ + ⇧ + p`. Then search for "Save".
 
-* Always start with a leading slash, '/'
-* Are relative to the root directory of the file system.
+### Deleting a File
 
-##### Definition: Root directory
-Is the top level directory in the tree structure that makes up your project or the **file system**.
+How do we get rid of this file? We'll use the `rm` command. But first: a
+warning. This is a very dangerous command. Do not ever press enter after typing
+`rm` without being **certain** you're targeting the right file. There's no way
+to recover files deleted with `rm`. The same advice goes double with `r` and `f`
+flags. Flags are switches that occur after dashes when issuing commands.
 
-> Open up the Finder and go to the root directory of your filesystem.
-
-> Find your home directory in the filesystem. Hint: use the absolute
-  file path returned from the pwd above to find this.
-
-### Create a project.
-
-> We're going to create or **make a directory, mkdir,** in our home directory that will contain all the files, directories, etc for this project.
-
-```bash
-$ mkdir MortStore
+```sh
+rm -rf <file_or_directory> # VERY DANGEROUS!
 ```
 
-> This will make a directory named "MortStore" in my home directory. See **mkdir is make directory**, amazing!
+### Code Along: User Manuals
 
-> Lets change into the "root", or top directory of your project. **Not the root of the filesystem, the root of this new project**.
+Sometimes I forget how to use certain commands on the command line. My first
+step, even before Googling, is to read the command's user manual. You can access
+the user manual for a command using `man <name_of_command>` in your terminal.
+So, to figure out how to use `rm`, you would executre `man rm`. Do so now. You
+should see somethign like this:
 
-```bash
-$ cd MortStore
+```md
+NAME
+     rm, unlink -- remove directory entries
+
+SYNOPSIS
+     rm [-dfiPRrvW] file ...
+     unlink file
+
+...
 ```
 
-> This will **change directory, cd** into the MortStore directory. This directory will hold all the files and such for your project.
+### Lab: Delete a File
 
-> Let's see what the contents of this directory are.
+Read the manual entry for `rm`. Delete the `name.txt` file you created in the
+previous exercise. Type the command, then check with a colleague before pressing
+issuing the command.
 
-```bash
-$ ls
-```
-> This will **list, ls,** all the files and subdirectories in the MortStore directory. None yet.
+### Lab: Cheatsheet
 
-> Let's create a README file that will be a high level description of this project.
+Let's use your new skills to create a reference sheet.
 
-```bash
-$ touch README
-```
-
-> This will **create an empty file, using touch,** that will be named README if one doesn't already  exist.
-
-> Let's look at all the files our project, only the empty README right now.
-
-```bash
-$ ls
-README
-$ ls -l
--rw-r--r--  1 tdyer  staff  0 Sep 25 01:55 README
-```
-> **ls -l will list** the contents of the current directory in "long" form. 
-> 
-> It shows the permissions to the files and directories, *-rw-r--r--*. Followed by number of links, *1*, the owner name, *tdyer* , the group name, *staff* , the number of bytes in file, *0* and the last modified date/time.
-
-### Add Project features
-
-From here on we are going to use BOTH the command line and the Sublime text editor to view the project and modify the project.
-
-> Open the project up in Sublime
-
-```
-$ pwd
-/Users/tdyer/MortStore
-$ 
-$ subl .
-```
-
-> This will open the Sublime Text Editor for the  project in this current directory. 
-
-##### Definition: The dot, '.' and dotdot, '..' directory.
-Notice that when we view the contents of this directory with **ls -al** we view all the files, including hidden files.
-The dot directory is just another way to refer to the current directory and the dotdot directory is another way to refer to the current directory's parent directory.
-
-> Add the below text to to the README file and save it using Sublime.
-
-```
-Morty's Hardware
-Lawn and Garden - Patio furniture, Hoses, Rakes, Shovels.
-Plumbing - Toilets, Sinks, Tube and Showers, Pipes, Fittings, Solder
-Electrical - Fuses, Lighting, Batteries, Switches, Wiring.
-Tools - Hand Tools, Power Tools, Wet/Dry Vacuums, Work Benches.
-Hardware - Door and Window, Fasteners.
-```
-
-> Go back to the Terminal and show the contents of the root directory.
-
-```bash
-$ pwd
-$ ls
-$ ls -l
--rw-r--r--  1 tdyer  staff  306 Sep 25 02:18 README
-$ cat README
-```
-> **cat will print the contents of the file** README. This is just to check that you modified the right file in Sublime. *Sometimes we get confused about which file we're editing*.
-
-**Create department directories.**
-
-> Create subdirectories for each department.
-
-```bash
-$ mkdir LawnGarden
-$ mkdir Plumbing
-$ mkdir Electrical
-$ mkdir Tools
-$ mkdir Hardware
-```
-
-> View all files in your project, recursively
-
-```bash
-$ ls -lR
-```
-
-> -R will recurse through all the subdirectories and run ls -l to show
-    all the files and subdirectories of the current directory.
-
-> Determine that the view your seeing from ls -lR EXACTLY matches with the view of your project your seeing in Sublime.
-
-**Create inventory files.**
-
-> In Sublime, create a file that will track the inventory for each department.
-
-> The files will be named inventory.txt and there contents will be a comma seperated file (CSV) in each department's directory.
-
-> In LawnGarden/inventory.csv add:
-
-```
-Item,ProdNum,Quantity,Price,Sold Per Month
-Shovel, 1, 11,74.33,13
-Rake,2,5,35.99,0.5
-Hose,3,19,16.99,3
-```
-
-> In Plumbing/inventory.csv:
-
-```
-Item,ProdNum,Quantity,Price,Sold Per Month
-Toilet,4,3,249.99,1
-Solder,5,88,5.99,33
-Sinks,6,5,299.99,.2
-```
-
-> In Electrical/inventory.csv:
-
-```
-Item,ProdNum,Quantity,Price,Sold Per Month
-Fuses,7,1024,1.99,640
-Batteries,8,100,4.99,204
-Switchs,9,29,14.50,18
-```
-
-> In Tools/inventory.csv:
-
-```
-Item,ProdNum,Quantity,Price,Sold Per Month
-Hand Saw,10,9,77.99,2
-Drill,11,67,34.99,15
-Wet Vac,12,2,114.50,0.1
-```
-
-**Create department staff files.**
-
-> Now create a file in each directory that will capture the current employees working in each department.
-
-> In LawnGarden/staff.csv:
-
-```
-Name,Phone,Email,Role
-Jack Sprat,978-251-2384,jack@example.com,manager
-Moe Brown,617-589-8977,moeb@example.com, associate
-```
-
-> In Plubming/staff.csv:
-
-```
-Name,Phone,Email,Role
-Brian Behan,978-668-2344,brianb@example.com,manager
-Richy Havens,617-812-7312,rhavens@example.com, associate
-```
-
-> In Electrical/staff.csv:
-
-```
-Name,Phone,Email,Role
-Joy Gillis,978-238-9894,joyg@example.com,manager
-Laura Havens,617-763-5542,rhavens@example.com, associate
-```
-
-> In staff.csv:
-
-```
-Name,Phone,Email,Role
-Tom Smith,888-989-777,ts@example.com, associate
-Meg Brown,978-453-8984,megb@example.com,manager
-```
-
-> Run ls -R and check it against the structure of your project shown in Sublime. Should be the same.
-
-> Oops, looks like the last staff file we created was in the root of the directory. Lets move it into the Tools directory.
-
-```bash
-$ pwd 
-$ mv staff.csv Tools/.
-```
-
-> We are using the **move** command. The dot after the directory just indicates that the destination file should also be named inventory.csv.
-
-**Create department notice files.**
-
-> Create a notice.txt file in each directory to communicate with the employees in each department.
-
-```bash
-$ pwd (Make sure your in the project root dir)
-$ touch notice.txt
-$ mv notice.txt Tools/.
-$ cp Tools/notice.txt Electrical/.
-$ cp Tools/notice.txt Plumbing/read_this.txt 
-$
-```
-> Here we using the **copy unix command, cp**. 
-
-**Create products file**
-
-> Let's create a file that will contain product information. 
-
-```bash
-touch products.csv
-```
-
-> Use Sublime to add these products, just cut and paste here.
-```
-Lawn and Garden - Patio furniture, Hoses, Rakes, Shovels.
-Plumbing - Toilets, Sinks, Tube and Showers, Pipes, Fittings, Solder
-Electrical - Fuses, Lighting, Batteries, Switches, Wiring.
-Tools - Hand Tools, Power Tools, Wet/Dry Vacuums, Work Benches.
-Hardware - Door and Window, Fasteners.
-```
-
-> Oh, nevermind. Don't like how this is done lets **remove** the file.
-
-```bash
-rm products.csv
-```
-
-
-## You Do
-
-Create a cheat sheet of the unix commands that we've used so far. *I like to these kinds of files for reference.*
-
-I want each of you to describe each command **in your own words**. Don't just cut and paste from some definition on the web!
-
-Use whatever system that works for you, Evernote, plain text files (my favorite), tatoos, whatever.
-
-**Show the final version to an instructor or DIR**
-
-## We do
-
-**Search for a term**
-
-> I'm looking for the phone number for an employee named Tom. I'm not sure what his last name is or what department he works in?
-
-```
-$ grep -R Tom *
-$ grep -R Tom */*.csv
-$ grep -R Tom */staff*
-```
-
-> I'm using grep to search for Tom. First I'm going to search for Tom in every file recursively in my project using ``grep -R Tom *``. Then I'm going to only look in CSV files. Finally, I'm going to look only in files that start with the characters 'staff'.
-> 
-> Notice the '*'. This is something called a Regular Expression, aka regex. You can think of it as a kind of wild card. *We'll learn more about this later.*
-
-**Search for a file**
-
-> Ok now I want to find all the staff CSV files in my project.
-
-```bash
-$ pwd (Make sure your in the project root dir)
-$ find . -name '*.csv'
-```
-
-> **find** is a pretty useful command that will allow one to find a file by name, partial name, modified or creation date. *It has many options that can be it complex but very useful*
-
-> This will look for any file that ends in .csv in the current directory and all descendent directories.
-
-> Look for these files in Sublime using it's file search features.
-
-
-### Finally
-Morty has been unusually quite, but now he speaks up.
-
->> Wow, this is crazy. Man, ls, cp, rm, mkdir, touch I'll never remember all this stuff!
-
-> That's right Morty. Just.
-
-```bash
-$ man ls
-$
-$ man cp
-$ man find
-```
-
-> Just use the **manual command, man** to find more info!. You can even.
-> 
-
-```bash
-man man
-```
-
-## You Do
-
-Create a project to track song information for a record company. 
-
-The songs should be grouped by genre. Let's say Rock, Jazz, Blues and  Dubstep. Yes, you will need to create directories for each genre.
-
-Create between one and four files in these directories, using ``touch``, where each file will contain the following infomation about one song. 
-
-> Title, Song Duration (Minutes), Price (dollars), Artist Name.
-
-Create a couple of songs in each file.
-
-
-Use ``mv`` to move a song file from Rock to some other directory. 
-
-Use ``cp`` followed by ``rm`` to move a file from Dubstep to Blues.
-
-Change into each directory and use ``ls`` and ``ls -al`` to view all the files in the directory.
-
-Change into the root directory and use ``ls -alR`` to view all the files in the project.
-
-For each of the above commands, (mv, cp, rm, touch), perform the equivalent operation in Sublime.
+Create a cheat sheet of the unix commands that we've used so far. I like to
+these kinds of files for reference. Describe each command in your own words.
+Don't just cut and paste from some definition on the web!
 
 ### References
 
-[Teaching Unix](http://www.ee.surrey.ac.uk/Teaching/Unix/)
-
-[Unix Cheat Sheet](https://www.rain.org/~mkummel/unix.html)
-
-[Unix Power Tools](http://shop.oreilly.com/product/9780596003302.do)
+-   [Teaching Unix](http://www.ee.surrey.ac.uk/Teaching/Unix/)
+-   [Unix Cheat Sheet](https://www.rain.org/~mkummel/unix.html)
+-   [Unix Power Tools](http://shop.oreilly.com/product/9780596003302.do)
 
 ## [License](LICENSE)
 
