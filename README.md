@@ -432,5 +432,8 @@ For each of the above commands, (mv, cp, rm, touch), perform the equivalent oper
 
 [Unix Power Tools](http://shop.oreilly.com/product/9780596003302.do)
 
+## [License](LICENSE)
 
-
+Source code distributed under the MIT license. Text licensed under the
+[wtfpl](http://www.wtfpl.net). General Assembly copyright General Assembly,
+Inc., all rights reserved.
