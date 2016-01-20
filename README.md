@@ -76,7 +76,7 @@ In your terminal sessions, figure out what directory you are in by using the
 directory in this path? What is the root of the file system?
 
 Open up the Finder and go to the root directory of your filesystem. There are
-several ways to accomplish this, but I prefer the `⌘ + G` shortcut in Finder.
+several ways to accomplish this, but I prefer the `⌘ + ⇧ + g` shortcut in Finder.
 Examine the contents of the root directory.
 
 Now, back in your terminal, change your current working directory to the root
@@ -137,13 +137,19 @@ Create the following directories as well. They should be subdirectories of
 -   `diagnostics`
 -   `projects`
 -   `tmp`
+-   `challenges`
+-   `practice`
+-   `study`
 
 Verify that your directory structure resembles the following:
 
 ```sh
 $HOME/wdi
+├── challenges
 ├── diagnostics
+├── practice
 ├── projects
+├── study
 ├── tmp
 └── training
 ```
@@ -182,7 +188,7 @@ Sometimes I forget how to use certain commands on the command line. My first
 step, even before Googling, is to read the command's user manual. You can access
 the user manual for a command using `man <name_of_command>` in your terminal.
 So, to figure out how to use `rm`, you would executre `man rm`. Do so now. You
-should see somethign like this:
+should see something like this:
 
 ```md
 NAME
@@ -197,9 +203,9 @@ SYNOPSIS
 
 ### Lab: Delete a File
 
-Read the manual entry for `rm`. Delete the `name.txt` file you created in the
-previous exercise. Type the command, then check with a colleague before pressing
-issuing the command.
+Read the manual entry for `rm`. When you're done reading, you can quit by pressing
+`q`. Delete the `name.txt` file you created in the previous exercise. Type the 
+command, then check with a colleague before pressing issuing the command.
 
 ### Lab: Cheatsheet
 
