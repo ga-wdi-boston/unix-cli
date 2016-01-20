@@ -223,6 +223,5 @@ Don't just cut and paste from some definition on the web!
 
 ## [License](LICENSE)
 
-Source code distributed under the MIT license. Text licensed under the
-[wtfpl](http://www.wtfpl.net). General Assembly copyright General Assembly,
-Inc., all rights reserved.
+Source code distributed under the MIT license. Text and other assets copyright
+General Assembly, Inc., all rights reserved.
