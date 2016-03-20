@@ -2,6 +2,14 @@
 
 # The Unix Command Line
 
+## Summary
+
+Using the Command Line to manipulate the filesystem.
+
+## Prerequisites
+
+- [WDI Fundamentals, Chapter 1](http://fundamentals.generalassemb.ly/01_chapter/intro.html)
+
 ## Objectives
 
 -   View files within a directory.
@@ -97,7 +105,7 @@ Relative paths are paths described with respect to the current working
 directory. What command do we use to figure out our current working directory?
 
 So if I'm in my home directory and I see a folder `projects` (how would I see
-that?), I can guess the full path to `projects` is `/Users/jeffh/projects`.
+that?), I can guess the full path to `projects` is `/Users/JWeeks/projects`.
 However, since I'm already in the home folder, the `ls` command tells me only
 unique part of the name needed to distinguish it from sibling directories.
 Sibling directories are directories that exist "beside" other directories,
@@ -170,6 +178,9 @@ and save it. On a Mac, the shortcut to save a file is `⌘ + s`. You can also
 search for the save command (indeed, any command) using the command palette.
 Try it by bringing up the palette with `⌘ + ⇧ + p`. Then search for "Save".
 
+Lets quickly take a peek inside the file we jsut created in our terminal.
+Type `cat name.text`.
+
 ### Deleting a File
 
 How do we get rid of this file? We'll use the `rm` command. But first: a
@@ -204,7 +215,7 @@ SYNOPSIS
 ### Lab: Delete a File
 
 Read the manual entry for `rm`. When you're done reading, you can quit by pressing
-`q`. Delete the `name.txt` file you created in the previous exercise. Type the 
+`q`. Delete the `name.txt` file you created in the previous exercise. Type the
 command, then check with a colleague before pressing issuing the command.
 
 ### Lab: Cheatsheet
@@ -220,6 +231,9 @@ Don't just cut and paste from some definition on the web!
 -   [Teaching Unix](http://www.ee.surrey.ac.uk/Teaching/Unix/)
 -   [Unix Cheat Sheet](https://www.rain.org/~mkummel/unix.html)
 -   [Unix Power Tools](http://shop.oreilly.com/product/9780596003302.do)
+-   [Explain Shell](http://explainshell.com)
+-   [TLDR Man Pages](http://tldr-pages.github.io)
+-   [Command Line Fu](http://www.commandlinefu.com/commands/browse)
 
 ## [License](LICENSE)
 
