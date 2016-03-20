@@ -53,10 +53,10 @@ explorer application. They're just convenient ways of grouping files together.
 Paths are string (textual) representations of your current place in the file
 hiearchy (or "tree").
 
-Examine this path: `/Users/jeffh`. The leading slash (`/`) is the root of the
+Examine this path: `/Users/JWeeks`. The leading slash (`/`) is the root of the
 file system. The next part `Users` indicates that there is a directory, or
 folder, with the name "Users" inside the root of the file system. Within the
-"Users" directory is another directory named `jeffh`. The string `/Users/jeffh`
+"Users" directory is another directory named `JWeeks`. The string `/Users/JWeeks`
 is an absolute path to the home directory for the current user on my machine.
 
 ### Absolute Paths
