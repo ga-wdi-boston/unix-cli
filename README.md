@@ -181,6 +181,9 @@ Try it by bringing up the palette with `⌘ + ⇧ + p`. Then search for "Save".
 Lets quickly take a peek inside the file we jsut created in our terminal.
 Type `cat name.text`.
 
+Now type `open name.txt`.
+See what happened? The file `name.txt` opens in whatever default application your computer uses for that type of file.
+
 ### Deleting a File
 
 How do we get rid of this file? We'll use the `rm` command. But first: a
