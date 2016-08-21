@@ -8,7 +8,7 @@ Using the Command Line to manipulate the filesystem.
 
 ## Prerequisites
 
-- [WDI Fundamentals, Chapter 1](http://fundamentals.generalassemb.ly/01_chapter/intro.html)
+-   [WDI Fundamentals, Chapter 1](http://fundamentals.generalassemb.ly/06_chapter/intro.html)
 
 ## Objectives
 
