@@ -8,7 +8,7 @@ Using the Command Line to manipulate the filesystem.
 
 ## Prerequisites
 
-- [WDI Fundamentals, Chapter 1](http://fundamentals.generalassemb.ly/01_chapter/intro.html)
+-   [WDI Fundamentals, Chapter 1](http://fundamentals.generalassemb.ly/06_chapter/intro.html)
 
 ## Objectives
 
@@ -53,11 +53,12 @@ explorer application. They're just convenient ways of grouping files together.
 Paths are string (textual) representations of your current place in the file
 hiearchy (or "tree").
 
-Examine this path: `/Users/JWeeks`. The leading slash (`/`) is the root of the
+Examine this path: `/Users/berzelba`. The leading slash (`/`) is the root of the
 file system. The next part `Users` indicates that there is a directory, or
 folder, with the name "Users" inside the root of the file system. Within the
-"Users" directory is another directory named `JWeeks`. The string `/Users/JWeeks`
-is an absolute path to the home directory for the current user on my machine.
+"Users" directory is another directory named `berzelba`. The string
+`/Users/berzelba` is an absolute path to the home directory for the current user
+on my machine.
 
 ### Absolute Paths
 
@@ -84,8 +85,8 @@ In your terminal sessions, figure out what directory you are in by using the
 directory in this path? What is the root of the file system?
 
 Open up the Finder and go to the root directory of your filesystem. There are
-several ways to accomplish this, but I prefer the `⌘ + ⇧ + g` shortcut in Finder.
-Examine the contents of the root directory.
+several ways to accomplish this, but I prefer the `⌘ + ⇧ + g` shortcut in
+Finder. Examine the contents of the root directory.
 
 Now, back in your terminal, change your current working directory to the root
 of the file system using the `cd` command (mnemonic: "change directory"). What
@@ -141,25 +142,25 @@ Now, what folder are you in? Did it change by making the new directory?
 Create the following directories as well. They should be subdirectories of
 `wdi`.
 
--   `training`
+-   `trainings`
 -   `diagnostics`
 -   `projects`
 -   `tmp`
 -   `challenges`
--   `practice`
--   `study`
+-   `practices`
+-   `studies`
 
 Verify that your directory structure resembles the following:
 
 ```sh
-$HOME/wdi
+~/wdi
 ├── challenges
 ├── diagnostics
-├── practice
+├── practices
 ├── projects
-├── study
+├── studies
 ├── tmp
-└── training
+└── trainings
 ```
 
 ## Files
@@ -168,7 +169,7 @@ Let's use the `tmp` directory to play around. `tmp` directories are
 conventionally used to store files that can be safely deleted. You should never
 put anything in them that you want to keep.
 
-### Code Along: Create a File
+### Code Along: Create/Edit a File
 
 Move into the `tmp` directory inside `wdi`. Create a new file using the `touch`
 command. Let's make a blank text file: `touch name.txt`.
@@ -182,7 +183,12 @@ Lets quickly take a peek inside the file we jsut created in our terminal.
 Type `cat name.text`.
 
 Now type `open name.txt`.
-See what happened? The file `name.txt` opens in whatever default application your computer uses for that type of file.
+
+See what happened? The file `name.txt` opens in whatever default application
+your computer uses for that type of file.
+
+Let's say that we didn't mean to call the file `name.txt`, how would we go about
+editing the file name to correct it?
 
 ### Deleting a File
 
@@ -217,9 +223,10 @@ SYNOPSIS
 
 ### Lab: Delete a File
 
-Read the manual entry for `rm`. When you're done reading, you can quit by pressing
-`q`. Delete the `name.txt` file you created in the previous exercise. Type the
-command, then check with a colleague before pressing issuing the command.
+Read the manual entry for `rm`. When you're done reading, you can quit by
+pressing `q`. Delete the `name.txt` file you created in the previous exercise.
+Type the command, then check with a colleague before pressing issuing the
+command.
 
 ### Lab: Cheatsheet
 
