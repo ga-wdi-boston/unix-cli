@@ -10,8 +10,8 @@
       "heading-style": "atx",
       "list-item-spacing": false,
       "no-html": false,
-      "no-shortcut-reference-link": false,
-      "no-undefined-references": false,
+      "no-shortcut-reference-link": true,
+      "no-undefined-references": true,
       "ordered-list-marker-value": "one",
       "rule-style": "---",
       "unordered-list-marker-style": "-"
