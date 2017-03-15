@@ -190,7 +190,13 @@ your computer uses for that type of file.
 Let's say that we didn't mean to call the file `name.txt`, how would we go about
 editing the file name to correct it?
 
-### Deleting a File
+### Lab: Copying a Hidden File
+Hidden files in your file system are denoted by a leading `.`. You can see these files using the command `ls -a`.
+Create a hidden file `.env`.
+Copy this file using the command `cp -a <original_name> <new_name>` to a new file named `.newEnv`.
+Check your work by typing `ls -a`.
+
+### Code Along: Deleting a File
 
 How do we get rid of this file? We'll use the `rm` command. But first: a
 warning. This is a very dangerous command. Do not ever press enter after typing
