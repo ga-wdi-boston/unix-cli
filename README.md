@@ -179,7 +179,7 @@ and save it. On a Mac, the shortcut to save a file is `⌘ + s`. You can also
 search for the save command (indeed, any command) using the command palette.
 Try it by bringing up the palette with `⌘ + ⇧ + p`. Then search for "Save".
 
-Lets quickly take a peek inside the file we jsut created in our terminal.
+Lets quickly take a peek inside the file we just created in our terminal.
 Type `cat name.txt`.
 
 Now type `open name.txt`.
